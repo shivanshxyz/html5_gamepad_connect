@@ -14,3 +14,5 @@ function update() {
     console.log(gamepads)
     window.requestAnimationFrame(update)
 }
+
+window.requestAnimationFrame(update)
