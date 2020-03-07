@@ -9,9 +9,16 @@ window.addEventListener('gamepaddisconnected', event => {
     console.log(event.gamepad)
 })
 
+const gamepadDisplay = document.getElementById('gamepad-display')
+
 function update() {
     const gamepads = navigator.getGamepads()
-    console.log(gamepads)
+    if (gamepads[0]){
+        const gamepadState = {
+            id : gamepads[0].id,
+        }
+        gamepadDisplay.textContent = JSON.stringify(gamepadState, null, 2)
+    }
     window.requestAnimationFrame(update)
 }
 
